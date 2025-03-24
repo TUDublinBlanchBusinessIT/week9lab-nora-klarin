@@ -17,4 +17,9 @@ class MemberController extends Controller
     {
         return response()->json(Member::find($id));
     }
+    public function showMemberBookings($id)
+{
+    $bookings = Booking::all()->where('memberid',$id);
+    return response()->json($bookings);
+}
 }
